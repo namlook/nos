@@ -1,0 +1,13 @@
+import{u as y,o as u,c as d,m as g,s as x,d as _,r as p,a as c,b as h,e as m,F as $,f as z,_ as b}from"./index-fa775fe6.js";import{s as w,N as V,u as P}from"./NsEvent-3dd303ee.js";var S=`
+.p-inputtextarea-resizable {
+    overflow: hidden;
+    resize: none;
+}
+
+.p-fluid .p-inputtextarea {
+    width: 100%;
+}
+`,B={root:function(t){var n=t.instance,s=t.props;return["p-inputtextarea p-inputtext p-component",{"p-filled":n.filled,"p-inputtextarea-resizable ":s.autoResize}]}},I=y(S,{name:"textarea",manual:!0}),N=I.load,Q={name:"BaseTextarea",extends:x,props:{modelValue:null,autoResize:Boolean},css:{classes:B,loadStyle:N},provide:function(){return{$parentInstance:this}}},f={name:"Textarea",extends:Q,emits:["update:modelValue"],mounted:function(){this.$el.offsetParent&&this.autoResize&&this.resize()},updated:function(){this.$el.offsetParent&&this.autoResize&&this.resize()},methods:{resize:function(){var t=window.getComputedStyle(this.$el);this.$el.style.height="auto",this.$el.style.height="calc(".concat(t.borderTopWidth," + ").concat(t.borderBottomWidth," + ").concat(this.$el.scrollHeight,"px)"),parseFloat(this.$el.style.height)>=parseFloat(this.$el.style.maxHeight)?(this.$el.style.overflowY="scroll",this.$el.style.height=this.$el.style.maxHeight):this.$el.style.overflow="hidden"},onInput:function(t){this.autoResize&&this.resize(),this.$emit("update:modelValue",t.target.value)}},computed:{filled:function(){return this.modelValue!=null&&this.modelValue.toString().length>0},ptmParams:function(){return{context:{disabled:this.$attrs.disabled||this.$attrs.disabled===""}}}}},k=["value"];function R(e,t,n,s,r,a){return u(),d("textarea",g({class:e.cx("root"),value:e.modelValue,onInput:t[0]||(t[0]=function(){return a.onInput&&a.onInput.apply(a,arguments)})},e.ptm("root",a.ptmParams),{"data-pc-name":"textarea"}),null,16,k)}f.render=R;const F={class:"query-page"},C={class:"mb-5 p-4 white-box"},H=c("h1",null,"Query",-1),T={class:"flex flex-column gap-4"},q=_({__name:"QueryPage",setup(e){const{fetch:t}=P(),n=p([]),s=p(`[{
+  "kinds": [1],
+  "limit": 10
+}]`),r=p(!1),a=async()=>{r.value=!0;try{let o=JSON.parse(s.value);const i=await t(o);n.value=i.sort((l,v)=>v.created_at-l.created_at)}catch(o){console.error(o)}r.value=!1};return(o,i)=>(u(),d("div",F,[c("div",C,[H,c("div",null,[h(m(f),{modelValue:s.value,"onUpdate:modelValue":i[0]||(i[0]=l=>s.value=l),rows:"15",style:{width:"100%"}},null,8,["modelValue"])]),h(m(w),{onClick:a,label:"Search",loading:r.value},null,8,["loading"])]),c("div",T,[(u(!0),d($,null,z(n.value,l=>(u(),d("div",{key:l.id},[h(V,{event:l},null,8,["event"])]))),128))])]))}}),U=b(q,[["__file","/Users/nicolasc/Documents/projects/others/nosworld/src/pages/QueryPage/QueryPage.vue"]]);export{U as default};
